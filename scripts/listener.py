@@ -5,7 +5,7 @@ from std_msgs.msg import Float32
 
 class Subscriber():
     def __init__(self):
-        self.sub=rospy.Subscriber("talk_number",Float32,self.callback)
+        self.sub=rospy.Subscriber('talk_number',Float32,self.callback)
 
         self.msg=Float32()
 
