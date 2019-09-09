@@ -4,6 +4,7 @@
 class Talker{
     public:
         Talker(){
+            nh_.getParam("robot_frame",robot_frame_);
             pub_=nh_.advertise<geometry_msgs::PointStamped>("talk_number",1000);
         }
     
@@ -14,11 +15,12 @@ class Talker{
         ros::Publisher pub_;
         
         geometry_msgs::PointStamped message_;
+        std::string robot_frame_;
 };
 
 void
 Talker::send_msgs(float number){
-
+    message_.header.frame_id=robot_frame_;
     message_.point.x=number;
 
     pub_.publish(message_);

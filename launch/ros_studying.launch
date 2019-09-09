@@ -1,4 +1,5 @@
 <launch>
+    <rosparam file="$(find ros_studying)/config/parameter.yaml" command="load" />
     <node pkg="ros_studying" type="talker" name="talker" output="screen">
     </node>
     <node pkg="ros_studying" type="listener.py" name="listener" output="screen">
