@@ -1,0 +1,6 @@
+<launch>
+    <node pkg="ros_studying" type="talker" name="talker" output="screen">
+    </node>
+    <node pkg="ros_studying" type="listener.py" name="listener" output="screen">
+    </node>
+</launch>
