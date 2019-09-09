@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
 import rospy
-from std_msgs.msg import Float32
+from geometry_msgs.msg import PointStamped 
 
 class Subscriber():
     def __init__(self):
-        self.sub=rospy.Subscriber('talk_number',Float32,self.callback)
+        self.sub=rospy.Subscriber('talk_number',PointStamped,self.callback)
 
-        self.message=Float32()
+        self.message=PointStamped()
 
     def callback(self,message):
         rospy.loginfo(message)

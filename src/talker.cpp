@@ -1,10 +1,10 @@
 #include<ros/ros.h>
-#include<std_msgs/Float32.h>
+#include<geometry_msgs/PointStamped.h>
 
 class Talker{
     public:
         Talker(){
-            pub_=nh_.advertise<std_msgs::Float32>("talk_number",1000);
+            pub_=nh_.advertise<geometry_msgs::PointStamped>("talk_number",1000);
         }
     
         void send_msgs(float number);
@@ -13,13 +13,13 @@ class Talker{
         ros::NodeHandle nh_;
         ros::Publisher pub_;
         
-        std_msgs::Float32 message_;
+        geometry_msgs::PointStamped message_;
 };
 
 void
 Talker::send_msgs(float number){
 
-    message_.data=number;
+    message_.point.x=number;
 
     pub_.publish(message_);
 
