@@ -7,10 +7,10 @@ class Subscriber():
     def __init__(self):
         self.sub=rospy.Subscriber('talk_number',Float32,self.callback)
 
-        self.msg=Float32()
+        self.message=Float32()
 
-    def callback(self,msg):
-        rospy.loginfo(msg)
+    def callback(self,message):
+        rospy.loginfo(message)
 
 if __name__ == '__main__':
     rospy.init_node('listener')

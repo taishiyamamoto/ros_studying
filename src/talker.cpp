@@ -13,15 +13,15 @@ class Talker{
         ros::NodeHandle nh_;
         ros::Publisher pub_;
         
-        std_msgs::Float32 msg;
+        std_msgs::Float32 message_;
 };
 
 void
 Talker::send_msgs(float number){
 
-    msg.data=number;
+    message_.data=number;
 
-    pub_.publish(msg);
+    pub_.publish(message_);
 
 }
 
