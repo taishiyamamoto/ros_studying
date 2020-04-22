@@ -1,2 +1,2 @@
 # ros_studying
-ros study
+ros studying
